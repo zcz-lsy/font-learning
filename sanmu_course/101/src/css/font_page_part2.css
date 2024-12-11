@@ -1,0 +1,109 @@
+.container .select-works {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.container .select-works .title {
+    font-size: 2rem;
+    font-weight: 200;
+}
+
+.container .works-box .works-item {
+    counter-increment: workNum;
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 0;
+}
+
+.container .works-box {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.container .works-box .works-item .move-img {
+    /* width: 260px;
+    height: 260px; */
+    width: 20vw;
+    height: 20vw;
+    max-width: 260px;
+    max-height: 260px;
+    border-radius: 50%;
+    overflow: hidden;
+    /* opacity: 0; */
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    pointer-events: none;
+}
+
+.container .works-box .works-item .move-img > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: left;
+}
+
+.container .works-box .works-item .text-box {
+    display: flex;
+    width: 100%;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.container .works-box .works-item .text-box .move-text{
+    position: absolute;
+    right: 0;
+    opacity: 0;
+    /* font-size: 6rem; */
+    font-size: 5vw;
+    font-style: italic;
+    font-weight: 500;
+    white-space: nowrap;
+    /* 最小宽度是跟父级元素一样宽 */
+    min-width: 100%;
+    /* 如果内容比较多的话，就是和内容一样宽 */
+    width: fit-content;
+    transform: translateX(100%);
+    animation: textMoving 8s linear infinite;
+    animation-play-state: paused;
+    transition: opatity 0.3s ease-in-out;
+    pointer-events: none;
+}
+
+@keyframes textMoving {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.container .works-box .works-item .text-box .item-text {
+    /* font-size: 6rem; */
+    font-size: 5vw;
+    font-weight: 400;
+    transition: opacity 0.2s ease;
+    z-index: 1;
+    text-decoration: none;
+    color: black;
+}
+
+.container .works-box .works-item .text-box .item-text:hover {
+    opacity: 0;
+}
+
+.container .works-box .works-item .text-box .item-text:hover + .move-text {
+    animation-play-state: running;
+    opacity: 0.2;
+}
+
+.container .works-box .works-item .text-box .item-text::before {
+   content: "0"counter(workNum)"/";
+   font-size: 2rem;
+   font-weight: 200;
+}

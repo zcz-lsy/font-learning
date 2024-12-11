@@ -1,0 +1,325 @@
+@font-face {
+    font-family:"Gilroy Medium";
+    src:url("./src/fonts/Gilroy-Medium.woff2") format("woff2"),
+        url("./src/fonts/Gilroy-Medium.woff") format("woff")
+  }
+  
+  @font-face {
+    font-family:"OpenSans";
+    src:url("./src/fonts/OpenSans-Bold.woff2") format("woff2"),
+        url("./src/fonts/OpenSans-Bold.woff") format("woff")
+  }
+  
+
+body {
+    margin: 0;
+    padding: 2rem;
+}
+
+.input-area {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+input {
+    background-color: #2627CF;
+    border: none;
+    padding: 1rem;
+    border-radius: 2rem;
+    width: 10rem;
+    outline-style: none;
+    transition: all 0.35s ease-in-out;
+    cursor: pointer;
+    font-size: 1rem;
+    letter-spacing: 1px;
+}
+
+input::placeholder {
+    color: white;
+    text-align: center;
+}
+
+input:focus::placeholder {
+    content: "你好";
+    color: lightgray;
+    text-align: left;
+}
+
+.input-focus {
+    background-color: white;
+    width: 20rem;
+    border: 2px solid lightgray;
+}
+
+.input-buttons {
+    display: flex;
+    gap: 0.5rem;
+    opacity: 0;
+    transition: opacity 0.35s ease-in-out;
+}
+
+.btn {
+    padding: 1rem 2rem 1rem 2rem;
+    color: white;
+    border-radius: 2rem;
+    font-family: "OpenSans";
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+
+}
+
+.confirm-btn {
+    background-color: #2627CF;
+}
+
+.cancel-btn {
+    background-color: black;
+}
+
+/* 待办事项卡区 */
+
+.todo-area {
+    margin-top: 5rem;
+}
+
+
+.todo-title {
+    font-size: 1.6rem;
+    letter-spacing: 6px;
+    font-weight: bold;
+}
+
+.todo-num {
+    font-family: "Gilroy Medium";
+    font-size: 1.6rem;
+    margin-left: 2rem;
+    opacity: 0.3;
+}
+
+.todo-card-container {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    transition: all 0.35s ease-in-out
+    /* gap: 2rem; */
+}
+
+.todo-card {
+    height: 15rem;
+    width: 15rem;
+    border-radius: 1.4rem;
+    padding: 2rem;
+    font-size: 1.2rem;
+    color: rgb(0, 0, 0, 0.5);
+    flex-shrink: 0;
+    position: relative;
+    margin-bottom: 2rem;
+    margin-right: 2rem;
+    transition: all 0.35s ease-in-out;
+}
+
+/* animation会在这些属性间过渡变化 */
+@keyframes card-move {
+    0% {
+        height: 15rem;
+        width: 15rem;
+        opacity: 1;
+        /* 除了宽高，透明度，移动，margin padding也可以进行过渡般的变化 */
+        margin-right: 2rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        transform: translateY(0px);
+    }
+
+    35% {
+        height: 7.5rem;
+        width: 15rem;
+        opacity: 1;
+        margin-right: 2rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        transform: translateY(0px);
+    }
+
+    70% {
+        height: 7.5rem;
+        width: 15rem;
+        opacity: 0;
+        margin-right: 2rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        transform: translateY(7.5rem);
+    }
+
+    100% {
+        height: 0rem;
+        width: 0rem;
+        opacity: 0;
+        margin-right: 0rem;
+        padding-left: 0rem;
+        padding-right: 0rem;
+        transform: translateY(15rem);
+    }
+}
+
+.todo-card-done-ani {
+    animation: card-move 1.5s ease-in-out forwards;
+}
+
+.done-card-to-ani {
+    animation: card-move 1.5s ease-in-out forwards reverse;
+}
+
+.card-orange {
+    background-color: #EBA281;
+}
+
+.card-qing{
+    background-color:#5FCFF1;
+}
+
+.card-green{
+    background-color:#E1E79F;
+}
+  
+.card-yellow{
+    background-color:#EEC984;
+}
+
+.card-purple{
+    background-color:#B39AEE;
+}
+
+
+.shadow-orange{
+    box-shadow: 0px 12px 12px -12px #D4500D, 0px 4px 18px #E8A281;
+  }
+  .shadow-qing{
+    box-shadow: 0px 12px 12px -12px #0EA6D5, 0px 4px 18px #5FCFF1;
+  }
+  
+  
+  .shadow-green{
+    box-shadow: 0px 12px 12px -12px #BBC91F, 0px 4px 18px #E1E79F;
+  }
+  
+  .shadow-yellow{
+    box-shadow: 0px 12px 12px -12px #D28C08, 0px 4px 18px #EEC984;
+  }
+  
+  .shadow-purple{
+    box-shadow: 0px 12px 12px -12px #470CD0, 0px 4px 18px #B39AEE;
+  }
+
+.edit-block {
+    width: 100%;
+    height: 100%;
+    /* pointer-events: none; */
+    outline-style: none;
+}
+
+.done-icon-box {
+    position: absolute;
+    left: 1rem;
+    bottom: 0.38rem;
+    cursor: pointer;
+    transition: all 0.55s ease-in-out;
+}
+
+.done-icon-box-init {
+    transform: rotate(50deg);
+    transform: translateX(-20px);
+    opacity: 0;
+}
+
+.icons-bar {
+    position: absolute;
+    right: 1rem;
+    bottom: 0.6rem;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.icon-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    transition: all 0.35s ease-in-out;
+}
+
+.icon-box-init {
+    transform: rotate(50deg);
+    transform: translateX(20px);
+    opacity: 0;
+}
+
+.delete-circle {
+    position: absolute;
+    transform: rotate(-90deg);
+}
+
+.delete-circle > circle {
+    transition: all 2s ease-in-out;
+}
+
+.color-dot {
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    border: 2px solid black;
+}
+
+.color-board {
+    position: absolute;
+    display: flex;
+    gap: 1rem;
+    top: -1.5rem;
+    left : -1.8rem;
+    transition: all 0.35s ease-in-out;
+}
+
+.color-board-init {
+    transform: translateY(10px);
+    opacity: 0;
+}
+
+/* done area */
+.done-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.done-card {
+    height: 5rem;
+    width: 15rem;
+    border-radius: 1.4rem;
+    padding: 2rem;
+    font-size: 1.2rem;
+    color: rgb(0, 0, 0, 0.5);
+    flex-shrink: 0;
+    position: relative;
+    margin-bottom: 2rem;
+    margin-right: 2rem;
+    transition: all 0.35s ease-in-out;
+}
+
+.done-card-init {
+    transform: translateY(-30px);
+    opacity: 0;
+}
+
+.done-card-icons {
+    display: flex;
+    gap: 0.5rem;
+    position: absolute;
+    bottom: 0.6rem;
+    right: 1rem;
+}
+
+.card-add-init {
+    opacity: 0;
+    transform: translateY(30px);
+}

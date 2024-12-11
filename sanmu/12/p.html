@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<script>
+"use strict";
+function main() {
+  var a = 1, b = 2;
+
+  console.log(a)
+
+  function test(b) {
+    var c = 3;
+    // console.log(word);
+    function Hello() {
+      var word = "Hello";
+      console.log("hello");
+      console.log(a);
+      console.log(b);
+    }
+    Hello();
+  }
+  test(b);
+}
+
+main();
+</script>

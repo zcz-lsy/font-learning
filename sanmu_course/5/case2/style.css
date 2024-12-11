@@ -1,0 +1,181 @@
+@font-face {
+    font-family: "Gilroy Medium";
+    src: url("./src/fonts/Gilroy-Medium.woff2") format("woff2"),
+         url("./src/fonts/Gilroy-Medium.woff") format("woff");
+  }
+  
+  @font-face {
+    font-family: "OpenSans";
+    src: url("./src/fonts/OpenSans-Bold.woff2") format("woff2"),
+         url("./src/fonts/OpenSans-Bold.woff") format("woff");
+  }
+
+  
+  html {
+    overflow: hidden;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  .container {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .content-box {
+    height: 100vh;
+    width: 100vw;
+    display: flex; 
+    justify-self: start;
+  }
+
+  /* flex布局中的元素定位position后，在没有单独设置偏移量的情况下，会单独受到父元素flex布局的影响 */
+  /* 脱离文档流不代表不受父元素布局的影响 */
+  .nav-dot {
+    position: absolute;
+    left: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    z-index: 20;
+  }
+
+  .dot {
+    height: 4px;
+    width: 4px;
+    background-color: black;
+    border-radius: 50%;
+  }
+
+  .big-dot {
+    height: 6px;
+    width: 6px;
+  }
+
+  .content {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 0 3rem;
+    transition:transform 0.5s ease-in-out;
+    flex-shrink: 0;
+  }
+
+ .part-1 {
+    background-color: white;
+  }
+
+  .part-2{
+    background-color:#FBFBFB;
+  }
+  .part-3{
+    background-color:#F8F8F8;
+  }
+  .part-4{
+    background-color:#F5F5F5;
+  }
+
+
+  .text-box {
+    font-size: 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-left: 6rem;
+    letter-spacing: 1px;
+  }
+
+  .title {
+    font-size: 1.8rem;
+    font-weight: bold;
+  }
+
+  .main-box {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .main-hint {
+    font-size: 1.5rem;
+    font-family: "Gilroy Medium";
+  }
+
+  .main-text {
+    width: 10rem;
+    font-family: "OpenSans";
+  }
+
+  .site {
+    font-size: 1rem;
+    font-family: "Gilroy Medium";
+    display: flex;
+    flex-direction: column;
+  }
+
+  .site-hint {
+    height: 8px;
+    width: 20px;
+    transform: translateY(6px);
+  }
+
+  .hint-blue {
+    background-color: blue;
+  }
+
+  .hint-green {
+    background-color: green;
+  }
+
+  .hint-red {
+    background-color: red;
+  }
+
+  .hint-yellow {
+    background-color: yellow;
+  }
+
+   .part1-pic {
+    height: 600px;
+    width: 600px;
+    background-image: url("src/imgs/illus-1.png");
+    background-size: contain;
+  }
+
+  .part2-pic {
+    height: 600px;
+    width: 600px;
+    background-image: url("src/imgs/illus-2.png");
+    background-size: contain;
+  }
+
+  .part3-pic {
+    height: 600px;
+    width: 600px;
+    background-image: url("src/imgs/illus-3.png");
+    background-size: contain;
+  }
+
+
+  .part4-pic {
+    height: 600px;
+    width: 600px;
+    background-image: url("src/imgs/illus-4.png");
+    background-size: contain;
+  }
+
+  /* .away-layer {
+    transform: translateY(100vh);
+  } */
+  

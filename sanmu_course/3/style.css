@@ -1,0 +1,373 @@
+@font-face {
+    font-family: "Gilroy-Medium";
+    src: url("../fonts/Gilroy-Medium.woff2") format("woff2"),
+         url("../fonts/Gilroy-Medium.woff") format("woff");
+}
+
+@font-face {
+    font-family: "OpenSans-Bold";
+    src: url("../fonts/OpenSans-Bold.woff2") format("woff2"),
+         url("../fonts/OpenSans-Bold.woff") format("woff");
+}
+
+body {
+    background-color: #FFF8F2;
+    padding: 0;
+    margin: 0;
+    /* overflow-x: hidden; */
+}
+
+.part1 {
+    position: relative;
+    height: 80rem;
+}
+
+.part2 {
+    height: 20rem;
+    display: flex;
+    justify-content: center;
+    gap: 8rem; 
+}
+
+.part3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10rem;
+    width: 100%;
+}
+
+.sun {
+    position: absolute;
+    top: -20rem;
+    left: -20rem;
+    z-index: 1;
+}
+
+.big-cloud {
+    position: absolute;
+    top: 20rem;
+    left: -30rem;
+    z-index: 2;
+    animation: big-cloud-move 10s ease-in-out alternate infinite ;
+}
+
+.small-cloud {
+    position: absolute;
+    top: 25rem;
+    left: 20rem;
+    z-index: 3;
+    animation: small-cloud-move 4s ease-in-out 1s alternate infinite;
+
+}
+
+@keyframes big-cloud-move {
+    from {
+        transform: translateX(0px);
+    }
+
+    to {
+        transform: translateX(70px);;
+    }
+}
+
+@keyframes small-cloud-move {
+    from {
+        transform: translateX(0px);
+    }
+
+    to {
+        transform: translateX(-50px);
+    }
+}
+
+.title-box {
+    position: absolute;
+    right: 10rem;
+    top: 30rem;
+    z-index: 100;
+    font-family: "OpenSans-Bold";
+    font-size: 3rem;
+    color: #2F2B26;
+}
+
+.title-color {
+    color: #FF812A;
+}
+
+.icon-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    transition: all 0.95s ease-in-out;
+}
+
+.ani-icon-init {
+    opacity: 0;
+    transform: translateY(8rem);
+}
+
+.icon-container > span {
+    font-family: "OpenSans-Bold";
+    font-size: 2.5rem;
+    opacity: 0.3;
+}
+
+.icon-box {
+    overflow: hidden;
+    position: relative;
+}
+
+/* cloudy */
+.icon-cloudy-sun {
+    position: absolute;
+    left: 1.6rem;
+    z-index: 1;
+    transform-origin:50% 20rem;
+    transition:transform 1.65s ease-in-out;
+}
+
+.sun-rotate {
+    transform: rotate(360deg);
+}
+
+.icon-cloudy-big-cloud {
+    position: absolute;
+    left: 1rem;
+    bottom: 1.5rem;
+    z-index: 2;
+}
+
+.icon-cloudy-small-cloud {
+    position: absolute;
+    right: 1rem;
+    bottom: 3.5rem;
+    z-index: 3;
+}
+
+.icon-cloudy-big-cloud-ani {
+    animation: icon-cloudy-big-cloud-move 10s ease-in-out infinite;
+}
+
+.icon-cloudy-small-cloud-ani {
+    animation: icon-cloudy-small-cloud-move 3s ease-in-out 1s infinite;
+}
+
+@keyframes icon-cloudy-big-cloud-move {
+    0% {
+        transform: translateX(0px)
+    }
+
+    30% {
+        transform: translateX(20px)
+    }
+
+    80% {
+        transform: translateX(-10px)
+    }
+
+    100% {
+        transform: translateX(0px);
+    }
+}
+
+@keyframes icon-cloudy-small-cloud-move {
+    0% {
+        transform: translateX(0px)
+    }
+
+    50% {
+        transform: translateX(-10px)
+    }
+
+    100% {
+        transform: translateX(0px);
+    }
+}
+
+/* sunny */
+.icon-sunny-sun {
+    position: absolute;
+    z-index: 1;
+    left: 0.8rem;
+    top: 0.4rem;
+    transition: transform 1.5s ease-in-out;
+}
+
+.bigger {
+    transform: scale(2.5) translateY(8rem);
+}
+
+.fly-out {
+    transform: scale(2) translateY(-20rem);
+}
+
+.fly-in {
+    transition: transform 1.5s ease-in-out;
+    transform: scale(1) translateY(0rem);
+}
+
+
+/* rain */
+.icon-box-rainy {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon-rainy-cloud {
+    position: absolute;
+    left: 0.8rem;
+    top: 2rem;
+}
+
+
+.rain-box {
+    position: absolute;
+    height: 60px;
+    width: 60px;
+    transform: translateY(2.5rem);
+}
+
+.rain{
+    position:absolute;
+    transition: transform 0.8s ease-in-out;
+}
+
+.rain-dot2{
+    left:-0.6rem;
+    top:1.2rem;
+}
+
+.rain-dot3{
+    left:1.4rem;
+    top:-0.5rem;
+}
+
+.rain-dot4{
+    left:0.6rem;
+    top:1.3rem;
+}
+
+.rain-dot5{
+    left:2.2rem;
+    top:1rem;
+}
+
+.raining {
+    transform: translate(-2.4rem, 8rem);
+}
+
+.away-cloud {
+    transition: transform 0.8s ease-in-out 1s;
+    transform: translateX(-20rem);
+}
+
+
+.fake-rainy-cloud {
+    transform: translateX(20rem);
+}
+
+.fake-rainy-rain {
+    transform: translate(20rem, 2.5rem);
+}
+
+
+.fake-in-cloud {
+    transition: transform 1.2s ease-in-out 1s;
+    transform: translateX(0rem);
+}
+
+.fake-in-rain {
+    transition: transform 1.2s ease-in-out 1s;
+    transform: translate(0rem, 2.5rem);
+}
+
+/* 静态图 */
+.part3 > span {
+    font-family: "OpenSans-Bold";
+    font-size: 2.5rem;
+    opacity: 0.3;
+    transition:all 0.5s ease-in-out;
+
+}
+
+.icons-box {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    margin-top: 4rem;
+}
+
+.icons-line {
+    display: flex;
+    gap: 4rem;
+}
+
+.pic-icon {
+    height: 6rem;
+    width: 6rem;
+    background-size: contain;
+    transition: all 0.5s ease-in-out;
+}
+
+.icon1{
+    background-image:url('icons/Icon1.png');
+}
+  
+.icon2{
+    background-image:url('icons/Icon2.png');
+}
+  
+.icon3{
+    background-image:url('icons/Icon3.png');
+}
+
+.icon4{
+    background-image:url('icons/Icon4.png');
+}
+  
+.icon5{
+    background-image:url('icons/Icon5.png');
+}
+
+.static-icon-init{
+    opacity: 0;
+    transform: translateY(5rem);
+}
+  
+.part4{
+    display:flex;
+    width:100%;
+    flex-direction:column;
+    align-items:center;
+    margin-top:15rem;
+    margin-bottom:10rem;
+}
+
+.part4{
+    transform:scale(0.8);
+    transition:all 0.5s ease-in-out;
+  }
+  .part4-init{
+    transform:translateY(3rem) scale(0.8);
+    opacity:0;
+  }
+  .title-part{
+    position:absolute;
+  }
+  .hellocode{
+    transform:translateY(-5rem);
+  }
+  .brand-title{
+    z-index:2;
+    margin-top: 8rem;
+  }
+  .title-sun{
+    transform:translate(-3rem,-5rem);
+  }
+  .rain-title{
+    transform:translate(-9rem,16rem);
+    z-index:3;
+  }

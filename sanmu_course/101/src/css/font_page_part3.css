@@ -1,0 +1,150 @@
+.container .footer {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    margin-top: 150px;
+}
+
+.container .footer .title {
+    font-size: 2.5rem;
+}
+
+.container .footer .text-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.1rem;
+    font-family: Helvetica NeueBold;
+    font-weight: 500;
+}
+
+@media (max-width: 600px) {
+    .container .footer .text-box {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4rem;
+    }
+}
+
+.container .footer .text-box .text-info {
+    display: flex;
+    flex-direction: column;
+    font-family: 800;
+    gap: 3px;
+    position: relative;
+
+}
+
+.container .footer .text-box .text-info .email {
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.container .footer .text-box .text-info .email::after{
+    content: "";
+    height: 1px;
+    width: 100%;
+    background-color: black;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: translateX(-100%);
+}
+
+.container .footer .text-box .text-info .email:hover::after {
+    transform: translateX(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+.container .footer .text-box .more-info {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.container .footer .text-box .more-info > div {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+}
+
+@media (max-width: 600px) {
+    .container .footer .text-box .more-info > div {
+        display: flex;
+        justify-content: flex-start;
+    }
+}
+
+.container .footer .text-box .more-info > div .icon {
+    width: 10px;
+    height: 10px;
+    background-image: url(../icons/play.svg);
+    background-repeat: no-repeat;
+}
+
+.container .footer .text-box .more-info > video {
+    width: 300px;
+    object-fit: cover;
+    position: absolute;
+    top: -400px;
+    right: 0;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+    pointer-events: none;
+
+}
+
+.container .footer .text-box .more-info:hover > video {
+    opacity: 1;
+}
+
+.container .footer .chat {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    padding-bottom: 10px;
+    overflow-x: hidden;
+    margin-top: 50px;
+    /* border: 1px solid red; */
+}
+
+.container .footer .chat::after {
+    content: "";
+    height: 3px;
+    width: 100%;
+    background-color: black;
+    position: absolute;
+    bottom: 0;
+    transition: transform 0.3s ease-in-out;
+}
+
+.container .footer .chat:hover::after {
+    transform: translateX(100%);
+}
+
+.container .footer .chat .icon {
+    background-image: url(../imgs/arrow.svg);
+    /* max-width: 100px; */
+    width: 4vw;
+    height: 4vw;
+    transform: translateX(-15px);
+    transition: transform 0.5s ease-in-out;
+}
+
+.container .footer .chat:hover .icon {
+    transform: translateX(1px) translateY(-2px);
+}
+
+
+.container .footer .chat .text {
+    /* font-size: 8rem; */
+    font-size: 7vw;
+}
+

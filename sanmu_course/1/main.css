@@ -1,0 +1,111 @@
+@font-face {
+    font-family: "Gilroy Medium";
+    src: url("./fonts/Gilroy-Medium.woff2") format("woff2"),
+         url("./fonts/Gilroy-Medium.woff") format("woff");
+}
+
+@font-face {
+    font-family: "OpenSans";
+    src: url("./fonts/OpenSans-Bold.woff2") format("woff2"),
+         url("./fonts/OpenSans-Bold.woff") format("woff");
+}
+
+
+body {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+}
+
+
+.container-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2.5rem;
+}
+
+.card-name {
+    font-family: OpenSans;
+    font-size: 1.8rem;
+}
+
+.bar {
+    display: flex;
+    gap: 0.2rem;
+    background-color: white;
+    padding: 1rem 0.6rem;
+    box-shadow: 0px 7px 15px -8px rgba(0, 0, 0, 0.37);
+    border-radius: 0.5rem;
+    cursor: move;
+}
+
+.spot {
+    height: 0.3rem;
+    width: 0.3rem;
+    border-radius: 100%;
+    background-color: blue;
+}
+
+.container-body {
+    font-family: Gilroy Medium;
+    display: flex;
+    gap: 1rem;
+}
+
+.container-select {
+    display: flex;
+    gap: 1rem;
+
+}
+
+.currency {
+    letter-spacing: 1px;
+    transform: rotate(-90deg);
+    font-size: 0.8rem;
+}
+
+.one-unit {
+    height: 14rem;
+    width: 6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid lightgray;
+    border-radius: 100rem;
+    padding: 2rem 0;
+    transition: all 0.2s ease-in-out;
+}
+
+.num {
+    font-size: 1.8rem;
+}
+
+.symbol {
+    font-size: 0.7rem;
+}
+
+.add-text {
+    transform: translateY(1.5rem) rotate(-90deg);
+    font-size: 0.9rem;
+}
+
+.add-hint {
+    opacity: 0.4;
+}
+
+.add-unit {
+    border: 1px dashed lightgray;
+    cursor: pointer;
+}
+
+.selected-unit {
+    background-color: #4F46BA;
+    border: 1px solid #4F46BA;
+    color: white;
+    box-shadow: 0px 50.7352px 78.5187px rgba(20, 34, 244, 0.14), 0px 32.8839px 45.9844px rgba(20, 34, 244, 0.106296), 0px 19.5424px 25.0097px rgba(20, 34, 244, 0.085037), 0px 10.147px 12.7593px rgba(20, 34, 244, 0.07), 0px 4.13398px 6.39782px rgba(20, 34, 244, 0.054963);
+}

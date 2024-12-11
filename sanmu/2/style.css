@@ -1,0 +1,92 @@
+body {
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-weight: 700;
+    color: rgba(248, 248, 248, 0.87)
+}
+
+.grid-box {
+    height: 800px;
+    width: 680px;
+    padding: 20px;
+    background-color: black;
+    display: grid;
+    grid-template-columns: 4fr 3fr 3fr 4fr;
+    grid-template-rows: 2fr 1fr 1fr 1fr 1.2fr 1.5fr;
+    gap: 20px;
+    grid-template-areas: 'a b b c'
+                        'a d e e'
+                        'f g e e'
+                        'f g h h'
+                        'i i h h'
+                        'i i j k';
+
+}
+
+.grid-item {
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.item1 {
+    background-color: rgba(127, 255, 212, 0.459);
+    grid-area: a;
+}
+
+.item2 {
+    background-color: blue;
+    grid-area: b;
+}
+
+.item3 {
+    background-color: coral;
+    grid-area: c;
+}
+
+.item4 {
+    background-color: green;
+    grid-area: d;
+}
+
+.item5 {
+    background-color: indigo;
+    grid-area: e;
+    
+}
+
+.item6 {
+    background-color: orange;
+    grid-area: f;
+}
+
+.item7 {
+    background-color: pink;
+    grid-area: g;
+}
+
+.item8 {
+    background-color: crimson;
+    grid-area: h;
+
+}
+
+.item9 {
+    background-color: rgb(112, 52, 207);
+    grid-area: i;
+}
+
+.item10 {
+    background-color: rgb(103, 194, 50);
+    grid-area: j;
+}
+
+.item11 {
+    background-color: rgba(255, 255, 0, 0.397);
+    grid-area: k;
+}
+

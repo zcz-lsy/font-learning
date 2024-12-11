@@ -1,0 +1,84 @@
+body {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(194, 216, 235);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid-box {
+    height: 380px;
+    width: 1200px;
+    background-color: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    justify-items: start;
+    align-items: center;
+    position: relative;
+    z-index: 0;
+    border: 1px solid rgb(185, 179, 179);
+
+}
+
+.fake-parent {
+    display: contents;
+}
+
+.table-header {
+    text-transform: capitalize;
+    font-size: 0.8rem;
+    font-weight: 800;
+}
+
+.special-padding {
+    padding-left: 30px;
+}
+
+.table-header-bg {
+    background-color: rgb(228, 228, 235);
+    grid-column: 1 / 8;
+    grid-row: 1 / 2;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+    border-bottom: 1px solid rgb(185, 179, 179);
+    box-sizing: border-box;
+}
+
+.content-line {
+    font-size: 0.8rem;
+    color: rgb(130, 131, 136);
+}
+
+.content-line > div {
+    border-bottom: 1px solid rgb(185, 179, 179);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.approved-icon > div {
+    background-color: rgb(41, 235, 170);
+    padding: 6px 8px;
+    color: white;
+    border-radius: 4px;
+}
+
+.rejected  > div {
+    background-color:rgb(219, 34, 34);
+    padding: 6px 8px;
+    color: white;
+    border-radius: 4px;
+}
+
+.pending-icon > div {
+    background-color:rgb(160, 70, 10);
+    padding: 6px 8px;
+    color: white;
+    border-radius: 4px;
+}

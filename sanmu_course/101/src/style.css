@@ -1,0 +1,61 @@
+@font-face {
+    font-family: Helvetica Neue;
+    src: url("./font/HelveticaNeueThin.otf");
+}
+
+@font-face {
+    font-family: Helvetica NeueBold;
+    src: url("./font/HelveticaNeueLight.otf")
+}
+
+* {
+    cursor: none;
+}
+
+html, body {
+    padding: 0;
+    margin: 0;
+    font-family: Helvetica Neue, sans-serif;
+}
+
+
+body {
+    z-index: 0;
+    overflow-x: hidden;
+}
+/* 
+    鼠标样式
+*/
+canvas[resize] {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    pointer-events: none;
+}
+
+.mousePoint {
+    height: 6px;
+    width: 6px;
+    background-color: black;
+    border-radius: 50%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 101;
+    pointer-events: none;
+}
+
+/* 没有空格， 只会在两个类名都存在的时候起效果 */
+.mousePoint.bigDot {
+    height: 32px;
+    width: 32px;
+    background-color: #dcff78;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+}
+
+

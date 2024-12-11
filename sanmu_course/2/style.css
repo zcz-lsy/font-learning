@@ -1,0 +1,91 @@
+@font-face {
+    font-family: "Gilroy-Medium";
+    src: url(./fonts/Gilroy-Bold.woff) format("woff"),
+         url(./fonts/Gilroy-Bold.woff2) format("woff2")
+}
+
+body {
+    background-color: #FFF8F2;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-bar {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12rem;
+    font-family: "Gilroy-Medium";
+    font-size: 2rem;
+    margin-bottom: 10rem;
+}
+
+.title {
+    cursor: pointer;
+    opacity: 0.4;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.selected-title {
+    opacity: 1;
+}
+
+
+.title-bg {
+    position: absolute;
+    left: 0;
+    width: 6.5rem;
+    height: 3.5rem;
+    background-color: white;
+    z-index: -1;
+    transform: translate(20px, 10px);
+    box-shadow: 36.3808px 36.3808px 41.5781px rgba(176, 112, 63, 0.2);
+    border-radius: 1rem;
+    transition: transform 0.3s ease-in-out
+}
+
+.content-box {
+    position: relative;
+    width: 20rem;
+    height: 20rem;
+}
+
+.img-box {
+    position: absolute;
+    width: 20rem;
+    height: 20rem;
+    transition: opacity 0.3s ease-in-out
+}
+
+.sunny-bg {
+    background: url(./imgs/sunny.png) center;
+    background-size: contain;
+    opacity: 0;
+}
+
+.cloudy-bg {
+    background: url(./imgs/cloudy.png) center;
+    background-size: contain;
+    opacity: 0;
+}
+
+.rainy-bg {
+    background: url(./imgs/rainy.png) center;
+    background-size: contain;
+    opacity: 0;
+}
+
+.selected-bg{
+    opacity: 1;
+    z-index: 10;
+}
